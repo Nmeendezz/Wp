@@ -12,19 +12,13 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3">
             <div class="container-fluid">
-
-                <!-- Título / Logo -->
-                <a class="navbar-brand text-warning fw-bold" href="<?php echo esc_url(home_url('/')); ?>">
+                <a class="navbar-brand text-warning" href="<?php echo esc_url(home_url('/')); ?>">
                     3ra evaluacion 2026
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/foto1.png" alt="logo" class="ms-2 rounded-2" style="height: 50px;">
                 </a>
-
-                <!-- Botón móvil -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Menú -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <?php
                     wp_nav_menu(array(

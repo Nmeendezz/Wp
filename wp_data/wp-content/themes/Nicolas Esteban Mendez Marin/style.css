@@ -19,13 +19,137 @@ Use it to make something cool, have fun, and share what you've learned with othe
     padding-left: 20vw;
 }
 
-/* Ajuste para que el texto sea blanco o amarillo según prefieras */
-.navbar-nav .nav-link.btn-outline-warning {
-    color: #ffc107; 
+@media (min-width: 768px) {
+    body {
+        padding-left: 115px;
+    }
+    .site-header {
+        margin-left: 0; 
+    }
 }
 
-/* Efecto Hover para que combine con el logo de Transformers */
-.navbar-nav .nav-link.btn-outline-warning:hover {
+@media (max-width: 767px) {
+    body {
+        padding-left: 0;
+    }
+}
+
+.menu-lateral-full .nav-item .btn {
+    width: 100% !important;
+    text-align: left;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+}
+
+aside .btn:hover {
+    background-color: #ffc107 !important; 
+    color: black !important;
+}
+
+@keyframes aparecerYEscalar {
+    from {
+        opacity: 0;
+        transform: scale(0.5); 
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.img-animada-transformer {
+    animation: aparecerYEscalar 0.8s ease-out forwards;
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        transform-origin: center center;
+}
+
+.img-animada-transformer:hover {
+    transform: scale(0.5) !important; 
+}
+
+.img-animada-transformer img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.mosaico-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    height: 300px;
+}
+
+.img-galeria {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    filter: grayscale(30%);
+}
+
+.mosaico-item:hover .img-galeria {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+body:has(#pagina-galeria-fullwidth, #pagina-login) {
+    padding-left: 0 !important;
+}
+
+body:has(#pagina-galeria-fullwidth, #pagina-login) aside {
+    display: none !important;
+}
+
+#pagina-galeria-fullwidth, #pagina-login {
+    width: 100vw;
+    position: relative;
+    left: 0;
+}
+
+.contenedor-img-card {
+    height: 200px; 
+    overflow: hidden;
+    background: #000;
+}
+
+.img-producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important; 
+}
+
+.card-text {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 4.5em;
+}
+
+.card-vacia-decorativa {
+    min-height: 350px;
     background-color: #ffc107;
-    color: #000 !important;
+    border-radius: 8px;
+}
+
+.card-producto {
+    border: 2px solid #ffc107 !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contenedor-img-login {
+    transition: transform 0.5s ease;
+}
+
+.contenedor-img-login:hover {
+    transform: translateY(-10px);
+}
+
+#pagina-login .btn-warning {
+    transition: background-color 0.3s ease;
+}
+
+#pagina-login .btn-warning:hover {
+    background-color: #e5ac00;
 }

@@ -77,21 +77,20 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     }
 }
 
+add_theme_support('post-thumbnails');
+add_image_size('inicio-nosotros', 350, 350, true);
+add_image_size('menu', 75, 75, true);
+
 function mitemplate_scripts_styles()
 {
-    wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.css', array());
-
     wp_enqueue_style('bootstrapcss', get_template_directory_uri() . '/css/bootstrap.min.css', array());
 
     // Hoja de estilos principal
-    wp_enqueue_style('style', get_stylesheet_uri(), array('normalize', 'bootstrapcss'), '1.0.0'); //(nombre, ruta, dependencias, version)
+    wp_enqueue_style('style', get_stylesheet_uri(), array('bootstrapcss'), '1.0.0'); //(nombre, ruta, dependencias, version)
 
     wp_enqueue_script('jquery');
 
     wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array('jquery'), '3.3.3', true);
-
-
-
 }
 add_action('wp_enqueue_scripts', 'mitemplate_scripts_styles');
 
